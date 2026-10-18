@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --apple-bg: #ffffff;
+    --apple-sidebar: #f5f5f7;
+    --apple-surface: #f9f9fb;
+    --apple-surface-elevated: #ffffff;
+    --apple-border: rgba(0, 0, 0, 0.08);
+    --apple-accent: #d97706;
+    --apple-accent-hover: #b45309;
+    --apple-text-primary: #1d1d1f;
+    --apple-text-secondary: #6e6e73;
+    --apple-text-tertiary: #86868b;
+    --apple-player-bg: rgba(255, 255, 255, 0.94);
+    --apple-header-bg: rgba(255, 255, 255, 0.85);
+  }
+
+  html.dark {
+    --apple-bg: #000000;
+    --apple-sidebar: #121214;
+    --apple-surface: #18181b;
+    --apple-surface-elevated: #222226;
+    --apple-border: rgba(255, 255, 255, 0.08);
+    --apple-accent: #facc15;
+    --apple-accent-hover: #eab308;
+    --apple-text-primary: #ffffff;
+    --apple-text-secondary: #9ca3af;
+    --apple-text-tertiary: #6b7280;
+    --apple-player-bg: rgba(22, 22, 24, 0.94);
+    --apple-header-bg: rgba(0, 0, 0, 0.75);
+  }
+
+  html.light {
+    --apple-bg: #ffffff;
+    --apple-sidebar: #f5f5f7;
+    --apple-surface: #f9f9fb;
+    --apple-surface-elevated: #ffffff;
+    --apple-border: rgba(0, 0, 0, 0.08);
+    --apple-accent: #d97706;
+    --apple-accent-hover: #b45309;
+    --apple-text-primary: #1d1d1f;
+    --apple-text-secondary: #6e6e73;
+    --apple-text-tertiary: #86868b;
+    --apple-player-bg: rgba(255, 255, 255, 0.94);
+    --apple-header-bg: rgba(255, 255, 255, 0.85);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Plus Jakarta Sans", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--apple-bg);
+    color: var(--apple-text-primary);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Custom Apple Music Glass & Controls */
+.glass-panel {
+  background: var(--apple-player-bg);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid var(--apple-border);
+}
+
+.glass-header {
+  background: var(--apple-header-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--apple-border);
+}
+
+.glass-player {
+  background: var(--apple-player-bg);
+  backdrop-filter: blur(30px) saturate(210%);
+  -webkit-backdrop-filter: blur(30px) saturate(210%);
+  border-top: 1px solid var(--apple-border);
+}
+
+/* Custom sleek Apple slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin-top: -4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  transform: scale(1.2);
+  background-color: #facc15;
+}
+
+/* Hide scrollbars for clean iTunes layout */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle sleek scrollbar for main viewport */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}

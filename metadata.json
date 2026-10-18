@@ -1,0 +1,6 @@
+{
+  "name": "Amber Music",
+  "description": "Plateau — sound architecture and music streaming platform by PRZM Studio. Featuring pyramid-crafted sonic landscapes, custom tracks, albums, special artist liner notes, and offline playback.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
